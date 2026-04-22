@@ -15,7 +15,7 @@ The goal is to group customers based on their behavior and characteristics witho
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 - Python 3
 - pandas
 - numpy
@@ -25,7 +25,7 @@ The goal is to group customers based on their behavior and characteristics witho
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 StudyProject/
 │
@@ -44,7 +44,7 @@ StudyProject/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 Clone the repository or download the project, then install dependencies:
 
