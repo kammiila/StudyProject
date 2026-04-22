@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Segmentation</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+
+        .box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+    <h2>Customer Segmentation</h2>
+
+    <form method="POST">
+        {% for f in features %}
+            <input name="{{ f }}" placeholder="{{ f }}">
+        {% endfor %}
+        <button>Predict</button>
+    </form>
+
+    {% if cluster is not none %}
+        <div class="result">
+            Cluster: {{ cluster }}
+        </div>
+    {% endif %}
+
+    {% if error %}
+        <div class="result">{{ error }}</div>
+    {% endif %}
+
+    <img src="{{ url_for('static', filename='cluster_plot.png') }}">
+
+</div>
+
+</body>
+</html>
