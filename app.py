@@ -4,9 +4,8 @@ import pickle
 
 app = Flask(__name__)
 
-# =========================
 # Загрузка модели и scaler
-# =========================
+
 with open("model.pkl", "rb") as f:
     model = pickle.load(f)
 
@@ -16,9 +15,8 @@ with open("scaler.pkl", "rb") as f:
 with open("feature_names.pkl", "rb") as f:
     feature_names = pickle.load(f)
 
-# =========================
 # Загрузка датасета
-# =========================
+
 df = pd.read_csv("customer_data.csv")
 
 # Первые 10 строк
@@ -28,9 +26,8 @@ sample_data = df.head(10).to_dict(orient="records")
 columns = df.columns.tolist()
 
 
-# =========================
 # Главная страница
-# =========================
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     prediction = None
@@ -74,8 +71,7 @@ def index():
     )
 
 
-# =========================
 # Запуск
-# =========================
+
 if __name__ == "__main__":
     app.run(debug=True)
